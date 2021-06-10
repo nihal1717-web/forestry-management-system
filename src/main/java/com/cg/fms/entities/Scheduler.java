@@ -12,30 +12,27 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-
-@Data    //lombok
+@Data
 @NoArgsConstructor
 @Entity
-@Table(name = "Product_tbl")
-public class Product {
-	
+@Table(name = "Schdl_tbl")
+public class Scheduler{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
-	
-	@Column(name = "name")
+	@Column(name = "id")
 	@NotNull
-	@Size(min = 3, message = "Product Name should have mininum 3 characters!!")
-	private String name;
+	private int id;
 	
-	@Column(name = "quantity")
+	@Column(name = "schdlname")
 	@NotNull
-	private String quantity;
+	private String schedulerName;
 	
-	@Column(name = "description")
+	@Column(name = "scdlcontract")
 	@NotNull
-	@Size(min = 15, message = "Product Description should have mininum 15 characters!!")
-	private String description;
+	private long schedulerContact;
 	
+	@Column(name = "trucknumber")
+	@NotNull
+	private String truckNumber;
 	
 }

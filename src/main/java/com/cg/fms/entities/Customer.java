@@ -50,8 +50,27 @@ public class Customer {
 //	@Pattern(regexp = "[9-7]{9}")
 	private long Contact;
 
-	/*@OneToMany(targetEntity = Product.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "cp_fk", referencedColumnName = "id")
-	private List<Product> products;*/
+//	@OneToMany(targetEntity = Product.class, cascade = CascadeType.ALL)
+//	@JoinColumn(name = "cp_fk", referencedColumnName = "id")
+//	private List<Product> products;
+	
+	@OneToMany(targetEntity = Order.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "co_fk", referencedColumnName = "id")
+	private List<Order> orders;
+	
+	/*@OneToMany(targetEntity = Orders.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "co_fk", referencedColumnName = "ContractNumber")
+	private List<Contract> contracts;*/
+	
+	@OneToMany(targetEntity = Cart.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "cc_fk", referencedColumnName = "id")
+	private List<Cart> carts;
+	
+	@OneToMany(targetEntity = Contract.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "cc_fk", referencedColumnName = "id")
+	private List<Contract> contracts;
+
+
+
 
 }
